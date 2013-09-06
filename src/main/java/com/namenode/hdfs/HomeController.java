@@ -45,15 +45,6 @@ public class HomeController {
 		 fs= FileSystem.get(conf);
 	}
 
-	
-		
-	@RequestMapping(method=RequestMethod.GET, value="/getLocation/{dir}/{fileName}")
-	public @ResponseBody ResponseObject getLocation(@PathVariable String dir,
-						@PathVariable String fileName) throws IOException {
-		return HadoopLocationResponse.getLocationOfBlock(dir,fileName);
-	}
-
-
 	@RequestMapping(method = RequestMethod.GET, value="/download")
 	public void doDownload(HttpServletRequest request,
 			HttpServletResponse response) throws Exception  {
